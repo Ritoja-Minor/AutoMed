@@ -757,8 +757,8 @@ p1,p2,p3 = st.beta_columns([2,1,1.5])
 with p2:
  if st.button('Predict'):
   with st.spinner('Loading Model...'):                 #to display the loading model sign
-      filename = r'C:\Users\ARCHISHMAN\PycharmProjects\Minor\Symptoms_model.sav'
-      # filename = r'https://drive.google.com/file/d/1kZBS7EleeIEALIGUSJ2cBSGzb8rgrrNE/view?usp=sharing'
+#       filename = r'C:\Users\ARCHISHMAN\PycharmProjects\Minor\Symptoms_model.sav'
+      filename = 'Symptoms_model.sav'
       loaded_model = pickle.load(open(filename, 'rb'))
       time.sleep(1.5)
   with st.spinner('Making Predictions...'):
