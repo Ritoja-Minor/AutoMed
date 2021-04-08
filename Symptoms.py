@@ -40,19 +40,6 @@ def get_data_from_gs():
 df_rank,dis_prec,dis_desp = get_data_from_gs()
 
 
-#loading all the data required by this webapp
-# @st.cache
-# def loading_all_data(rank_link,desp_link,prec_link):
-#  df_rank = pd.read_csv(rank_link)
-#  df_desp = pd.read_csv(desp_link)
-#  df_prec = pd.read_csv(prec_link)
-#  return df_rank,df_desp,df_prec
-#
-# df_rank,dis_desp,dis_prec = loading_all_data(r'C:\Users\ARCHISHMAN\PycharmProjects\Minor\Symptom-severity.csv',
-#                                              r'C:\Users\ARCHISHMAN\PycharmProjects\Minor\symptom_Description.csv',
-#                                              r'C:\Users\ARCHISHMAN\PycharmProjects\Minor\symptom_precaution.csv')
-
-
 #making the necessary dictionaries to map the values as required
 rank_dict = dict(zip(df_rank.Symptom.to_list(),df_rank.weight.to_list()))
 desp_dict = dict(zip(dis_desp.Disease.to_list(),dis_desp.Description.to_list()))
