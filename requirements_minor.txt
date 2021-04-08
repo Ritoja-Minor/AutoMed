@@ -1,0 +1,4 @@
+gspread==3.7.0
+pandas==1.2.3
+numpy==1.20.2
+streamlit==0.79.0
