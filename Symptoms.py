@@ -759,15 +759,16 @@ with p2:
  if st.button('Predict'):
     if len(dis)<6:
         st.text('\nPlease increase the number of symptoms.\n')
-    if len(dis)>17:
+    elif len(dis)>17:
         st.text('\nThe number of symptoms should be less than 17, please reduce the count.\n')
-    with st.spinner('Loading Model...'):                 #to display the loading model sign
-      filename = 'Symptoms_model.sav'
-      loaded_model = pickle.load(open(filename, 'rb'))
-      time.sleep(1.5)
-    with st.spinner('Making Predictions...'):
-      result = loaded_model.predict(np.array(dis).reshape(1, -1))[0]
-      time.sleep(1.5)
+    else:
+        with st.spinner('Loading Model...'):                 #to display the loading model sign
+          filename = 'Symptoms_model.sav'
+          loaded_model = pickle.load(open(filename, 'rb'))
+          time.sleep(1.5)
+        with st.spinner('Making Predictions...'):
+          result = loaded_model.predict(np.array(dis).reshape(1, -1))[0]
+          time.sleep(1.5)
 
 
 #This code is used to demonstrate the action after pressing the predict button.
