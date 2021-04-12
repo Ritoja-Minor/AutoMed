@@ -704,10 +704,7 @@ if (len(dis)>=6) and (len(dis)<17):
  diff = 17-len(dis)
  for i in range(diff):
   dis.append(0)
-elif len(dis)<6:
-    st.text('\nPlease increase the number of symptoms.\n')
-else:
-    st.text('\nThe number of symptoms should be less than 17, please reduce the count.\n')
+
 
 
 #The below dict is used to map the prediction to the name of the diseases
@@ -760,12 +757,15 @@ result=299                                                   #random seed value 
 p1,p2,p3 = st.beta_columns([2,1,1.5])
 with p2:
  if st.button('Predict'):
-  with st.spinner('Loading Model...'):                 #to display the loading model sign
-#       filename = r'C:\Users\ARCHISHMAN\PycharmProjects\Minor\Symptoms_model.sav'
+    if len(dis)<6:
+        st.text('\nPlease increase the number of symptoms.\n')
+    if len(dis)>17:
+        st.text('\nThe number of symptoms should be less than 17, please reduce the count.\n')
+    with st.spinner('Loading Model...'):                 #to display the loading model sign
       filename = 'Symptoms_model.sav'
       loaded_model = pickle.load(open(filename, 'rb'))
       time.sleep(1.5)
-  with st.spinner('Making Predictions...'):
+    with st.spinner('Making Predictions...'):
       result = loaded_model.predict(np.array(dis).reshape(1, -1))[0]
       time.sleep(1.5)
 
