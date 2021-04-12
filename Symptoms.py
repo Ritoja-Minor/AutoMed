@@ -705,9 +705,9 @@ if (len(dis)>=6) and (len(dis)<17):
  for i in range(diff):
   dis.append(0)
 elif len(dis)<6:
-    st.write('\nPlease increase the number of symptoms.\n')
+    st.text('\nPlease increase the number of symptoms.\n')
 else:
-    st.write('\nThe number of symptoms should be less than 17, please reduce the count.\n')
+    st.text('\nThe number of symptoms should be less than 17, please reduce the count.\n')
 
 
 #The below dict is used to map the prediction to the name of the diseases
