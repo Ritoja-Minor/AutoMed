@@ -749,7 +749,7 @@ final_pred_dict = \
  37: 'Typhoid',
  38: 'Urinary tract infection',
  39: 'Varicose veins',
- 40: 'hepatitis A'}
+ 40: 'Hepatitis A'}
 
 
 #the below code is used to make the predictions and display the disease that is predicted
