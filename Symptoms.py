@@ -97,7 +97,7 @@ option = st.sidebar.selectbox(
  'Typhoid',
  'Urinary tract infection',
  'Varicose veins',
- 'hepatitis A')
+ 'Hepatitis A')
 )
 
 
