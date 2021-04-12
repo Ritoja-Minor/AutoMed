@@ -753,7 +753,7 @@ final_pred_dict = \
 
 
 #the below code is used to make the predictions and display the disease that is predicted
-# result=299                                                   #random seed value can be any value greater than 140
+result=299                                                   #random seed value can be any value greater than 140
 p1,p2,p3 = st.beta_columns([2,1,1.5])
 with p2:
  if st.button('Predict'):
