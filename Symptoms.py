@@ -772,15 +772,15 @@ with p2:
 
 
 #This code is used to demonstrate the action after pressing the predict button.
-# if result==299:
-#  st.markdown('')
-# elif (len(set(dis))==1) and (list(set(dis))[0]==0):
-#  ph = st.empty()
-#  ph.text('Warning : Please select the Symptoms First.')
-# else:
-st.markdown(f'## You may have : {final_pred_dict[result]}')
-st.markdown('Following are the precautions that you should take.')
-for i,prec in enumerate(list(dis_prec.loc[(dis_prec.Disease == final_pred_dict[result]), 'Precaution_1':])):
+if result==299:
+ st.markdown('')
+elif (len(set(dis))==1) and (list(set(dis))[0]==0):
+ ph = st.empty()
+ ph.text('Warning : Please select the Symptoms First.')
+else:
+ st.markdown(f'## You may have : {final_pred_dict[result]}')
+ st.markdown('Following are the precautions that you should take.')
+ for i,prec in enumerate(list(dis_prec.loc[(dis_prec.Disease == final_pred_dict[result]), 'Precaution_1':])):
     st.write(f'{i+1}. {dis_prec[(dis_prec.Disease == final_pred_dict[result])][prec].values[0]}')
 
 
